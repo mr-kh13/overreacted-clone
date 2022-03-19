@@ -1,15 +1,12 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { fetchPosts, selectPosts } from "@/store/posts/posts.slice";
+import React from "react";
+import { useGetPostsQuery } from "@/store/posts/posts.apis";
 import { PostCard } from "./PostCard";
 
 export const Posts = () => {
-  const dispatch = useAppDispatch();
-  const posts = useAppSelector(selectPosts);
+  const { data: posts = [], isLoading, isError } = useGetPostsQuery();
 
-  useEffect(() => {
-    dispatch(fetchPosts());
-  }, []);
+  if (isError) return <div>Error</div>;
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>

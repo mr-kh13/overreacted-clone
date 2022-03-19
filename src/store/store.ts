@@ -1,11 +1,15 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 import themeReducer from "./theme/theme.slice";
-import postsReducer from "./posts/posts.slice";
+// import postsReducer from "./posts/posts.slice";
+import { postsApi } from "./posts/posts.apis";
 
 export function makeStore() {
   return configureStore({
-    reducer: { theme: themeReducer, posts: postsReducer },
+    reducer: { theme: themeReducer, [postsApi.reducerPath]: postsApi.reducer },
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware().concat(postsApi.middleware),
   });
 }
 
