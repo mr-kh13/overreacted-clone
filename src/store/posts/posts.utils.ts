@@ -1,17 +1,6 @@
 import moment from "moment";
 import { Post } from "./posts.types";
 
-export const sortPosts = (posts: Post[]): Post[] => {
-  if (!posts) return [];
-  return posts
-    .sort((a, b) => a.id - b.id)
-    .map((post) => ({
-      ...post,
-      readingTime: getFormattedReadingTime(calculateReadingTime(post.body)),
-      date: moment().subtract(post?.id, "days").format("MMMM DD, YYYY"),
-    }));
-};
-
 export const calculateReadingTime = (text: string): number | null => {
   if (!text) return null;
   const wpm = 225;
@@ -30,4 +19,17 @@ export const getFormattedReadingTime = (readingTime: number | null): string => {
     readingTime > 30 ? "🍱" : "☕️"
   );
   return `${icons} ${readingTime} ${readingTime > 1 ? "mins" : "min"} read`;
+};
+
+export const transformPost = (post: Post): Post => {
+  return {
+    ...post,
+    readingTime: getFormattedReadingTime(calculateReadingTime(post.body)),
+    date: moment().subtract(post?.id, "days").format("MMMM DD, YYYY"),
+  };
+};
+
+export const sortPosts = (posts: Post[]): Post[] => {
+  if (!posts) return [];
+  return posts.sort((a, b) => a.id - b.id).map((post) => transformPost(post));
 };
