@@ -12,7 +12,9 @@
       "@/store": ["./src/store"],
       "@/store/*": ["./src/store/*"],
       "@/providers": ["./src/providers"],
-      "@/providers/*": ["./src/providers/*"]
+      "@/providers/*": ["./src/providers/*"],
+      "@/constants": ["./src/constants"],
+      "@/constants/*": ["./src/constants/*"]
     }
   }
 }
