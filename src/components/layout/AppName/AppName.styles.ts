@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.a((props) => ({
+export const Wrapper = styled.h3((props) => ({
   fontSize: "1.98818rem",
   lineHeight: "2.625rem",
   fontWeight: 900,
