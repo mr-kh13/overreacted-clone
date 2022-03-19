@@ -17,7 +17,7 @@ yarn dev
 ```
 
 Then open up this url on your browser:
-[localhost:3000](http://localhost:300)
+[localhost:3000](http://localhost:3000)
 
 ## How to use it in production mode?
 
@@ -40,7 +40,7 @@ yarn start
 ```
 
 Then open up this url on your browser:
-[localhost:3000](http://localhost:300)
+[localhost:3000](http://localhost:3000)
 
 ## Notes
 
