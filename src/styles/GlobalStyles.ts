@@ -12,6 +12,8 @@ export const GlobalStyles = createGlobalStyle((props) => ({
     wordWrap: "break-word",
     fontSize: "100%",
     lineHeight: 1.75,
+    transition: "color 0.2s ease-out, background 0.2s ease-out",
+    fontKerning: "normal",
   },
   h1: {
     margin: 0,

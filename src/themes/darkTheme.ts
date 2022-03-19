@@ -9,7 +9,7 @@ export const darkTheme: DefaultTheme = {
       bg: "#282c35",
       color: "#ffffffe0",
     },
-    primary: "#d23669",
+    primary: "#ffa7c4",
     link: {
       primary: "#222",
     },

@@ -20,7 +20,7 @@ export const MetaWrapper = styled.div({
   alignItems: "center",
 });
 
-export const Meta = styled.small({});
+export const Meta = styled.small({ fontWeight: 400, fontSize: "80%" });
 
 export const Description = styled.p({
   marginBottom: "1.75rem",
