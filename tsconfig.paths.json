@@ -7,8 +7,12 @@
       "@/components/*": ["./src/components/*"],
       "@/styles": ["./src/styles"],
       "@/styles/*": ["./src/styles/*"],
-      "@/theme": ["./src/theme"],
-      "@/theme/*": ["./src/theme/*"]
+      "@/themes": ["./src/themes"],
+      "@/themes/*": ["./src/themes/*"],
+      "@/store": ["./src/store"],
+      "@/store/*": ["./src/store/*"],
+      "@/providers": ["./src/providers"],
+      "@/providers/*": ["./src/providers/*"]
     }
   }
 }
