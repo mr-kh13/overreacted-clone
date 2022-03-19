@@ -1,11 +1,11 @@
-# TypeScript & Styled Components Next.js version of Dan Abramov’s personal weblog
+# TypeScript & Styled Components & Next.js version of Dan Abramov’s personal weblog
 
 This project is showing the usage of Next.js with TypeScript and Styled Components in re-creaing Dan Abramov’s personal weblog.
 
 ## How to use it in development mode?
 
 ```bash
-# install the project packages
+# install the packages
 yarn
 # Execute `yarn dev` to start the project in development mode:
 yarn dev
@@ -14,7 +14,7 @@ yarn dev
 ## How to use it in production mode?
 
 ```bash
-# install the project packages
+# install the packages
 yarn
 # Execute `yarn build` to build the project:
 yarn build
