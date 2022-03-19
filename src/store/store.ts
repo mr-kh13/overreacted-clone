@@ -1,19 +1,43 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
-import themeReducer from "./theme/theme.slice";
-// import postsReducer from "./posts/posts.slice";
+import { rootReducer } from "./rootReducer";
 import { postsApi } from "./posts/posts.apis";
+
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["theme"],
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export function makeStore() {
   return configureStore({
-    reducer: { theme: themeReducer, [postsApi.reducerPath]: postsApi.reducer },
+    reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(postsApi.middleware),
+      getDefaultMiddleware({
+        serializableCheck: {
+          /* ignore persistance actions */
+          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+        },
+      }).concat(postsApi.middleware),
   });
 }
 
 const store = makeStore();
+
+setupListeners(store.dispatch);
 
 export type AppState = ReturnType<typeof store.getState>;
 
