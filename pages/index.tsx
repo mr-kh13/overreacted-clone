@@ -1,10 +1,18 @@
-import styled from 'styled-components'
+import { Header } from "@/components/layout/Header";
+import { AppContainer } from "@/components/layout/AppContainer";
+import { Footer } from "@/components/layout/Footer";
+import { Introduction } from "@/components/Introduction";
+import { Posts } from "@/components/Posts";
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
-`
-
-export default function Home() {
-  return <Title>My page</Title>
+export default function HomePage() {
+  return (
+    <AppContainer>
+      <Header />
+      <Introduction />
+      <main>
+        <Posts />
+      </main>
+      <Footer />
+    </AppContainer>
+  );
 }
