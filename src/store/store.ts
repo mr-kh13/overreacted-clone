@@ -1,10 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
 import themeReducer from "./theme/theme.slice";
+import postsReducer from "./posts/posts.slice";
 
 export function makeStore() {
   return configureStore({
-    reducer: { theme: themeReducer },
+    reducer: { theme: themeReducer, posts: postsReducer },
   });
 }
 
