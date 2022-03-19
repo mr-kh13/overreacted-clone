@@ -4,23 +4,43 @@ This project is showing the usage of Next.js with TypeScript and Styled Componen
 
 ## How to use it in development mode?
 
+Install the packages:
+
 ```bash
-# install the packages
 yarn
-# Execute `yarn dev` to start the project in development mode:
+```
+
+And then run it in development mode:
+
+```bash
 yarn dev
 ```
 
+Then open up this url on your browser:
+[localhost:3000](http://localhost:300)
+
 ## How to use it in production mode?
 
+Install the packages:
+
 ```bash
-# install the packages
 yarn
-# Execute `yarn build` to build the project:
+```
+
+And then build the project:
+
+```bash
 yarn build
-# Execute `yarn start` to start the project in production mode:
+```
+
+And then run it in production mode:
+
+```bash
 yarn start
 ```
+
+Then open up this url on your browser:
+[localhost:3000](http://localhost:300)
 
 ## Notes
 
